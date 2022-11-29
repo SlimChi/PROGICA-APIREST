@@ -1,14 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="PROGICA-APIREST-main:war">
+  <artifact type="war" name="giteApiRest:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>PROGICA-APIREST-main</module>
+        <module>giteApiRest</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="archive" name="giteApiRest-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="PROGICA-APIREST-main:war exploded" />
+      <element id="artifact" artifact-name="giteApiRest:war exploded" />
     </root>
   </artifact>
 </component>

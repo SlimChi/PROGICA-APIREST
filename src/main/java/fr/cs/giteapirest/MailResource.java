@@ -3,6 +3,7 @@ package fr.cs.giteapirest;
 import fr.cs.giteapirest.dao.DaoFactory;
 import fr.cs.giteapirest.metier.Departement;
 import fr.cs.giteapirest.metier.Mail;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -11,6 +12,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.ArrayList;
+@Tag(name = "Mails")
 
 @Path("/mails")
 public class MailResource {
