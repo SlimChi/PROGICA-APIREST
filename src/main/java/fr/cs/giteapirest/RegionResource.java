@@ -17,7 +17,7 @@ import java.util.ArrayList;
 @Path("/Regions")
 @Produces(MediaType.APPLICATION_JSON)
 @Tag(name = "regions")
-public class RegonResource {
+public class RegionResource {
     @GET
     @Operation(summary = "liste des regions")
 

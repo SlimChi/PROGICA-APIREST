@@ -1,6 +1,7 @@
 package fr.cs.giteapirest.dao;
 
 import fr.cs.giteapirest.metier.Equipement;
+import fr.cs.giteapirest.metier.Gite;
 import fr.cs.giteapirest.metier.TypeEquipement;
 
 import java.sql.*;
@@ -123,8 +124,18 @@ public class EquipementDAO extends DAO<Equipement,Equipement>{
     }
 
     @Override
-    public boolean delete(Equipement object) {
-        return false;
+    public boolean delete(Equipement equipement) {
+        String Statement = "DELETE FROM GITE WHERE ID_GITE =? ";
+        try (PreparedStatement pStmt = this.connexion.prepareStatement(Statement)) {
+            pStmt.setInt(1, equipement.getId());
+            pStmt.execute();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            return false;
+        }
+
     }
 
 
