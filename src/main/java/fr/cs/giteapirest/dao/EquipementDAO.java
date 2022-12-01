@@ -83,18 +83,21 @@ public class EquipementDAO extends DAO<Equipement,Equipement>{
 
     @Override
     public boolean insert(Equipement equipement) {
-        String Statement = "insert into EQUIPEMENT ( LIBELLE_EQUIPEMENT, ID_TYPE_EQUIPEMENT) values ( ?, ?)";
-        try (PreparedStatement pStmt = this.connexion.prepareStatement(Statement)) {
-            if (equipement != null){
-                pStmt.setString(1, equipement.getLibelle());
-                pStmt.setInt(2, equipement.getTypeEquipement().getId());
-                pStmt.execute();
-            }
+
+        try
+        {
+            PreparedStatement pstmt = connexion.prepareStatement("insert into EQUIPEMENT ( LIBELLE_EQUIPEMENT, ID_TYPE_EQUIPEMENT) values (?,?);");
+
+            pstmt.setString(1,equipement.getLibelle());
+            pstmt.setInt(2,equipement.getIdTypeEquipement());
+            pstmt.executeUpdate();
+
             return true;
 
-        }    catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return false;
+
         }
 
     }
@@ -108,7 +111,7 @@ public class EquipementDAO extends DAO<Equipement,Equipement>{
 
     public boolean updateLibelleEquipment(Equipement nomActuelEquipement, Equipement nouveauNomEquipement) {
 
-        String Statement = "update EQUIPEMENT set LIBELLE_EQUIPEMENT = ? where LIBELLE_EQUIPEMENT = ?";
+        String Statement = "update EQUIPEMENT set LIBELLE_EQUIPEMENT = ? where ID_TYPE_EQUIPEMENT = ?";
 
         try(PreparedStatement pSmt = connexion.prepareStatement(Statement)) {
 
@@ -126,17 +129,28 @@ public class EquipementDAO extends DAO<Equipement,Equipement>{
 
     @Override
     public boolean delete(Equipement equipement) {
-        String Statement = "DELETE FROM GITE WHERE ID_GITE =? ";
-        try (PreparedStatement pStmt = this.connexion.prepareStatement(Statement)) {
-            pStmt.setInt(1, equipement.getId());
-            pStmt.execute();
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
 
-            return false;
+        try {
+
+            PreparedStatement pStmt = connexion
+                    .prepareStatement(" DELETE FROM EQUIPEMENT WHERE ID_TYPE_EQUIPEMENT =?");
+            // Determine the column set column
+
+            pStmt.setInt(1,equipement.getId());
+
+            //pStmt.executeQuery();
+            pStmt.executeUpdate();
+
+
+            return true;
         }
 
+        // Handle any errors that may have occurred.
+        catch (Exception e) {
+
+            e.printStackTrace();
+            return false;
+        }
     }
 
 

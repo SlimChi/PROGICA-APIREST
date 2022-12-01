@@ -13,20 +13,20 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.ArrayList;
 @Tag(name = "Equipements")
-
 @Path("/equipements")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class EquipementResource {
 
     @GET
     @Operation(summary = "liste des equipements")
-    @Produces(MediaType.APPLICATION_JSON)
     public Response getAll(){
+
         ArrayList<Equipement> equipements = DaoFactory.getEquipementDAO().getAll();
         return Response.ok(equipements).build();
     }
     @GET
     @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
     public Response getbyId(@PathParam("id") Integer id){
         Equipement equipement = DaoFactory.getEquipementDAO().getByID(id);
         return Response.ok(equipement).build();
@@ -34,7 +34,6 @@ public class EquipementResource {
 
     @PUT
     @Path("{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("id") Integer id, Equipement equipement){
         if(equipement == null || id == null){
             return Response.status(Response.Status.BAD_REQUEST).build();
@@ -48,14 +47,9 @@ public class EquipementResource {
             return Response.status(Response.Status.BAD_REQUEST).build();
     }
     @POST
-    @Path("{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response insert(@PathParam("id") Integer id, Equipement equipement){
-        if(equipement == null || id == null){
+    public Response insert(Equipement equipement){
+        if(equipement == null){
             return Response.status(Response.Status.BAD_REQUEST).build();
-        }
-        if(id != equipement.getId()){
-            return Response.status(Response.Status.CONFLICT).entity(equipement).build();
         }
         if(DaoFactory.getEquipementDAO().insert(equipement))
             return Response.ok(equipement).build();
@@ -65,17 +59,13 @@ public class EquipementResource {
 
     @DELETE
     @Path("{id}")
-    @Consumes("application/json")
-    @ApiResponse(responseCode = "204", description = "supprimé!!")
-    @ApiResponse(responseCode = "400", description = "!non supprimé!!")
-
     public Response delete(@PathParam("id") Integer id){
-        if(id == null){
-            return Response.status(Response.Status.BAD_REQUEST).build();
-        }
-        if(DaoFactory.getEquipementDAO().delete(new Equipement())){
-            return Response.status(204).build();
-        }
+        Equipement equipement = new Equipement();
+        equipement.setId(id);
+
+        if(DaoFactory.getEquipementDAO().delete(equipement))
+            return Response.ok(equipement).build();
+
         else
             return Response.status(Response.Status.BAD_REQUEST).build();
     }

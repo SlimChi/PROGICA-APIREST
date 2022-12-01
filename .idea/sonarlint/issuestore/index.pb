@@ -3,8 +3,6 @@ a
 1src/main/java/fr/cs/giteapirest/metier/Ville.java,9\0\90cb9839b2b8f0d2221f3ea1d24bd22aae415d06
 b
 2src/main/java/fr/cs/giteapirest/MyApplication.java,f\c\fc58cab103e6cc51d5beacc38b3e38af98ddc36d
-a
-1src/main/java/fr/cs/giteapirest/GiteResource.java,6\2\62874f8c8da7919bc80d03f9ecc520359c55bf4e
 f
 6src/main/java/fr/cs/giteapirest/dao/SaisonGiteDAO.java,2\d\2d26d7056f8e22d1f7c2b3d6c54381527fd80e48
 i
