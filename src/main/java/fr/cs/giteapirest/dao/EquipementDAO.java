@@ -2,6 +2,7 @@ package fr.cs.giteapirest.dao;
 
 import fr.cs.giteapirest.metier.Equipement;
 import fr.cs.giteapirest.metier.Gite;
+import fr.cs.giteapirest.metier.Region;
 import fr.cs.giteapirest.metier.TypeEquipement;
 
 import java.sql.*;
@@ -15,23 +16,23 @@ public class EquipementDAO extends DAO<Equipement,Equipement>{
 
     @Override
     public Equipement getByID(int id) {
-        System.out.println("getById");
+
+        Equipement equipement = new Equipement();
         ResultSet rs;
 
-        String Statement = "SELECT * FROM EQUIPEMENT WHERE ID_EQUIPEMENT = 30";
-        try (PreparedStatement pStmt = this.connexion.prepareStatement(Statement)) {
+        try {
+
+            PreparedStatement pStmt = connexion.prepareStatement("select * from EQUIPEMENT where ID_EQUIPEMENT = ?");
+            pStmt.setInt(1,id);
+            rs = pStmt.executeQuery();
+            while(rs.next()){
 
 
-                //pStmt.setInt(1, id);
-                rs = pStmt.executeQuery();
+                equipement.setId(rs.getInt(1));
+                equipement.setLibelle(rs.getString(2));
 
-                System.out.println(rs);
-
-                while(rs.next()){
-
-                    System.out.println(rs.getInt(1));
-                }
-
+            }
+            rs.close();
 
 
         }    catch (SQLException e) {
@@ -39,7 +40,7 @@ public class EquipementDAO extends DAO<Equipement,Equipement>{
 
         }
 
-        return null;
+        return equipement;
     }
 
     @Override

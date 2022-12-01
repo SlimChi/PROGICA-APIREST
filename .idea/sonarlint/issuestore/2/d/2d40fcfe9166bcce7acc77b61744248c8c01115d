@@ -1,0 +1,14 @@
+
+E
+java:S3740\"/Provide the parametrized type for this generic.(ìóåõ
+†
+java:S1319\"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ìóåõ
+k	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Œıöúÿÿÿÿ
+k	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë²Â°ÿÿÿÿÿ
+f	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁŸõ
+j
+java:S2095b"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Õò‡ÿÿÿÿÿ
+A
+java:S1168"+Return an empty collection instead of null.(¥¹ï
+A
+java:S1168"+Return an empty collection instead of null.(¥¹ï

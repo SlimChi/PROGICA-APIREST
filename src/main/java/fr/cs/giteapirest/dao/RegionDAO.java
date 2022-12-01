@@ -2,10 +2,9 @@ package fr.cs.giteapirest.dao;
 
 import fr.cs.giteapirest.metier.Departement;
 import fr.cs.giteapirest.metier.Region;
+import fr.cs.giteapirest.metier.TypeEquipement;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 
@@ -20,7 +19,29 @@ public class RegionDAO extends DAO <Region, Region>
     @Override
     public Region getByID(int id) {
 
-        return null;
+        Region region = new Region();
+        ResultSet rs;
+
+        try {
+
+            PreparedStatement pStmt = connexion.prepareStatement("select * from REGION where ID_REGION = ?");
+            pStmt.setInt(1,id);
+            rs = pStmt.executeQuery();
+            while(rs.next()){
+
+                region.setId(rs.getInt(1));
+                region.setNom(rs.getString(2));
+
+            }
+            rs.close();
+
+
+        }    catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
+        return region;
     }
 
     @Override
@@ -54,7 +75,19 @@ public class RegionDAO extends DAO <Region, Region>
 
     @Override
     public boolean insert(Region objet) {
-        return false;
+//        String Statement = "insert into EQUIPEMENT ( LIBELLE_EQUIPEMENT, ID_TYPE_EQUIPEMENT) values ( ?, ?)";
+//        try (PreparedStatement pStmt = this.connexion.prepareStatement(Statement)) {
+//            if (equipement != null){
+//                pStmt.setString(1, equipement.getLibelle());
+//                pStmt.setInt(2, equipement.getTypeEquipement().getId());
+//                pStmt.execute();
+//            }
+//            return true;
+//
+//        }    catch (SQLException e) {
+//            e.printStackTrace();
+            return false;
+//        }
     }
 
     @Override

@@ -1,0 +1,19 @@
+
+F
+java:S3740¬"/Provide the parametrized type for this generic.(±äÙÆ
+‡
+java:S1319¬"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(±äÙÆ
+k	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“­’ııÿÿÿÿ
+f	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÈõ
+g	java:S117×"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ı”Ô
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Õò‡ÿÿÿÿÿ
+A
+java:S1168:"+Return an empty collection instead of null.(¥¹ï
+N	java:S106{"9Replace this use of System.out or System.err by a logger.(Å‹ª»
+M	java:S106|"9Replace this use of System.out or System.err by a logger.(®ìÎH
+R	java:S125ƒ"<This block of commented-out lines of code should be removed.(›£üÃ
+M
+java:S1172”"1Remove this unused method parameter "equipement".(öÀÂšúÿÿÿÿ
+W	java:S125µ"<This block of commented-out lines of code should be removed.(œû…¶üÿÿÿÿ
+O	java:S106Í"9Replace this use of System.out or System.err by a logger.(¼®´·
