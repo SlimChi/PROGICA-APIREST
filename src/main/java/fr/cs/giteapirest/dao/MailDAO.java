@@ -1,10 +1,10 @@
 package fr.cs.giteapirest.dao;
 
 import fr.cs.giteapirest.metier.Mail;
+import fr.cs.giteapirest.metier.Region;
+import fr.cs.giteapirest.metier.TypeEquipement;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class MailDAO extends DAO<Mail,Mail>{
@@ -17,9 +17,58 @@ public class MailDAO extends DAO<Mail,Mail>{
         return null;
     }
 
+    public Mail getbyMail (String id) {
+       Mail mail = new Mail();
+        ResultSet rs;
+
+        try {
+
+            PreparedStatement pStmt = connexion.prepareStatement("select * from MAIL where ID_MAIL = ?");
+            pStmt.setString(1,id);
+            rs = pStmt.executeQuery();
+            while(rs.next()){
+
+               mail.setId(rs.getString(1));
+
+            }
+            rs.close();
+
+
+        }    catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
+        return mail;
+    }
+
     @Override
     public ArrayList<Mail> getAll() {
-        return null;
+        ArrayList<Mail> liste = new ArrayList<>();
+        try (Statement stmt = connexion.createStatement()) {
+
+            // Determine the column set column
+
+            String strCmd = "select * from MAIL";
+
+            ResultSet rs = stmt.executeQuery(strCmd);
+
+            while (rs.next()) {
+
+                Mail mail = new Mail();
+                mail.setId(rs.getString(1));
+
+                liste.add(mail);
+
+            }
+            rs.close();
+
+        }
+        // Handle any errors that may have occurred.
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return liste;
     }
 
     @Override

@@ -1,0 +1,17 @@
+
+k	java:S117r"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÃêùÿÿÿÿ
+g	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó¦—Ï
+e
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(©£Ê“
+k
+java:S2095‡"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Õò‡ÿÿÿÿÿ
+j
+java:S2095Y"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‚Ìùøÿÿÿÿ
+A
+java:S1168Q"+Return an empty collection instead of null.(¥¹ï
+R	java:S125"<This block of commented-out lines of code should be removed.(¦¾”»
+R	java:S125Ä"<This block of commented-out lines of code should be removed.(†ÕşÔ
+W
+java:S1128":Remove this unused import 'fr.cs.giteapirest.metier.Gite'.(”°‡½8öâÆñÌ0
+^
+java:S1128"<Remove this unused import 'fr.cs.giteapirest.metier.Region'.(Î¼›¡şÿÿÿÿ8÷âÆñÌ0

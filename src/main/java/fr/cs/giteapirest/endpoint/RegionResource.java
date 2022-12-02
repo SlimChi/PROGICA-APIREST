@@ -1,4 +1,4 @@
-package fr.cs.giteapirest;
+package fr.cs.giteapirest.endpoint;
 
 
 import fr.cs.giteapirest.dao.DaoFactory;

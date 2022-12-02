@@ -9,8 +9,6 @@ i
 9src/main/java/fr/cs/giteapirest/metier/TypeTelephone.java,6\4\64e5f7c20652670a8b6eae3e8bf7db10946c4155
 b
 2src/main/java/fr/cs/giteapirest/metier/Region.java,1\5\15341ddf61c3aad8a9b3fcf5d2b3d21be81a3452
-a
-1src/main/java/fr/cs/giteapirest/MailResource.java,f\f\ff8be1249940269230c215c452d0f4ad54d0e6ba
 `
 0src/main/java/fr/cs/giteapirest/dao/GiteDAO.java,d\4\d4f8744b15ccc989a9a6d9cc7b605c511010f3f2
 q
@@ -33,3 +31,9 @@ e
 5src/main/java/fr/cs/giteapirest/dao/TelephoneDAO.java,2\d\2d40fcfe9166bcce7acc77b61744248c8c01115d
 i
 9src/main/java/fr/cs/giteapirest/dao/TypeTelephoneDAO.java,9\e\9ed0f7c70f95e3a977037952ef35bf146c063987
+f
+6src/main/java/fr/cs/giteapirest/metier/Equipement.java,a\4\a4944493aeba3a53f356ff2aeb5556e88ffec586
+j
+:src/main/java/fr/cs/giteapirest/metier/TypeEquipement.java,f\1\f15f5e445360ed75ee0684fb040c3abcf1962560
+f
+6src/main/java/fr/cs/giteapirest/dao/EquipementDAO.java,e\4\e4355bf5d09c0182016fa8b5216ea38000b541c1
